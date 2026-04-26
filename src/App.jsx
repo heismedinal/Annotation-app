@@ -95,7 +95,7 @@ export default function App() {
         headers: { authorization: apiKey, "Content-Type": "application/json" },
         body: JSON.stringify({
   audio_url: upload_url,
-  speech_models: { default: "universal" },
+  speech_models: ["universal"],
   speaker_labels: true,
   sentiment_analysis: true,
   auto_highlights: true,
