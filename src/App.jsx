@@ -92,7 +92,9 @@ export default function App() {
           format_text: false,
         }),
       });
-      if (!jobRes.ok) throw new Error("Failed to submit job.");
+     if (!jobRes.ok) {
+  const errData = await jobRes.json();
+  throw new Error(errData.error || "Failed to submit job.");
       const { id } = await jobRes.json();
 
       // 3. Poll
