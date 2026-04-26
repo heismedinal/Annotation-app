@@ -94,13 +94,14 @@ export default function App() {
         method: "POST",
         headers: { authorization: apiKey, "Content-Type": "application/json" },
         body: JSON.stringify({
-          audio_url: upload_url,
-          speaker_labels: true,
-          sentiment_analysis: true,
-          auto_highlights: true,
-          disfluencies: true,
-          punctuate: true,
-          format_text: false,
+  audio_url: upload_url,
+  speech_model: "universal-2",
+  speaker_labels: true,
+  sentiment_analysis: true,
+  auto_highlights: true,
+  disfluencies: true,
+  punctuate: true,
+  format_text: false,
         }),
       });
       if (!res.ok) {
